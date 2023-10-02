@@ -535,7 +535,32 @@
 								<div class="elementor-element elementor-element-a6f3590 elementor-align-center elementor-widget elementor-widget-button" data-id="a6f3590" data-element_type="widget" data-widget_type="button.default">
 									<div class="elementor-widget-container">
 										<div class="elementor-button-wrapper">
-											<a class="elementor-button elementor-button-link elementor-size-sm" href="bigday.html">
+											<script type="text/javascript">
+											function bigDayIsLive(){
+												if (currentDate() > '2023-10-7 00:0:0') {
+													window.location.href='bigday.html';
+												}else {
+													window.location.href='notification.html';
+												}
+											}
+
+											function currentDate(){
+										        // Create a new Date object
+										        const currentDate = new Date();
+
+										        // Get the current date and time components
+										        const year = currentDate.getFullYear();
+										        const month = currentDate.getMonth() + 1; // Months are 0-indexed, so we add 1
+										        const day = currentDate.getDate();
+										        const hours = currentDate.getHours();
+										        const minutes = currentDate.getMinutes();
+										        const seconds = currentDate.getSeconds();
+										        // Create a formatted string for date and time
+										        const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+														return formattedDateTime;
+													}
+											</script>
+											<a class="elementor-button elementor-button-link elementor-size-sm" href="javascript:;" onclick="bigDayIsLive();">
 												<span class="elementor-button-content-wrapper">
 													<span class="elementor-button-text">07 October 1998</span>
 												</span>
@@ -587,7 +612,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-3feecee elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="3feecee" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_bottom&quot;:&quot;waves&quot;,&quot;shape_divider_bottom_negative&quot;:&quot;yes&quot;}">
+				<section id="countDownSpecialDay" class="elementor-section elementor-top-section elementor-element elementor-element-3feecee elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="3feecee" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_bottom&quot;:&quot;waves&quot;,&quot;shape_divider_bottom_negative&quot;:&quot;yes&quot;}">
 					<div class="elementor-shape elementor-shape-bottom" data-negative="true">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
 							<path class="elementor-shape-fill" d="M790.5,93.1c-59.3-5.3-116.8-18-192.6-50c-29.6-12.7-76.9-31-100.5-35.9c-23.6-4.9-52.6-7.8-75.5-5.3
