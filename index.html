@@ -527,20 +527,9 @@
 									<div class="elementor-widget-container">
 										<div class="ekit-wid-con">
 											<div class="ekit-heading elementskit-section-title-wraper text_center   ekit_heading_tablet-   ekit_heading_mobile-">
-												<h2 class="ekit-heading--title elementskit-section-title "> <span><span>Chaithnya's</span></span>
-													<script type="text/javascript">
-														var today = new Date();
-														var birthDate = new Date(1998, 9, 7); // October 7, 1998
-														var age = today.getFullYear() - birthDate.getFullYear();
-														var monthDifference = today.getMonth() - birthDate.getMonth();
-														var dayDifference = today.getDate() - birthDate.getDate();
-
-														// Adjust age if birthday hasn't occurred yet this year
-														if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
-														    age--;
-														}
-														document.write(age);
-													</script>th Birthday</h2>
+												<h2 class="ekit-heading--title elementskit-section-title ">
+													<span><span>Chaithnya's</span></span>
+													<span id="herAgeInLandingPage"></span> th Birthday</h2>
 											</div>
 										</div>
 									</div>
@@ -659,7 +648,7 @@
 
 														<div class="eael-countdown-wrapper" data-countdown-id="6ef23a7" data-expire-type="none" data-countdown-type="due_date">
 															<div class="eael-countdown-container eael-countdown-label-block eael-countdown-label-block-tablet eael-countdown-label-block-mobile ">
-																<ul id="eael-countdown-6ef23a7" class="eael-countdown-items" data-date="Oct 07 2024 00:00:00">
+																<ul id="eael-countdown-6ef23a7" class="eael-countdown-items" data-date="Oct 07 1998 00:00:00">
 																	<li class="eael-countdown-item">
 																		<div class="eael-countdown-days"><span data-days class="eael-countdown-digits">00</span><span class="eael-countdown-label">Days</span></div>
 																	</li>
@@ -673,6 +662,24 @@
 																		<div class="eael-countdown-seconds"><span data-seconds class="eael-countdown-digits">00</span><span class="eael-countdown-label">Seconds</span></div>
 																	</li>
 																</ul>
+																<script type="text/javascript">
+														        document.addEventListener("DOMContentLoaded", function() {
+														            var today = new Date();
+														            var currentYear = today.getFullYear();
+
+														            // Check if the current date has passed October 7th
+														            var targetDate = new Date(currentYear, 9, 7); // October 7th of the current year
+														            if (today > targetDate) {
+														                currentYear += 1; // Set to next year if passed October 7th
+														            }
+
+														            var countdownElement = document.getElementById('eael-countdown-6ef23a7');
+														            countdownElement.setAttribute('data-date', 'Oct 07 ' + currentYear + ' 00:00:00');
+
+														            // Verify the attribute is set correctly
+														            console.log('Countdown date set to:', countdownElement.getAttribute('data-date'));
+														        });
+														    </script>
 																<div class="eael-countdown-expiry-template" style="display: none;">
 																</div>
 																<div class="clearfix"></div>
@@ -809,19 +816,26 @@
 							<div class="elementor-widget-wrap elementor-element-populated">
 								<div class="elementor-element elementor-element-e5fe1d1 elementor-widget elementor-widget-heading" data-id="e5fe1d1" data-element_type="widget" data-widget_type="heading.default">
 									<div class="elementor-widget-container">
-										<h2 class="elementor-heading-title elementor-size-default">Kick Ass <script type="text/javascript">
-											var today = new Date();
-											var birthDate = new Date(1998, 9, 7); // October 7, 1998
-											var age = today.getFullYear() - birthDate.getFullYear();
-											var monthDifference = today.getMonth() - birthDate.getMonth();
-											var dayDifference = today.getDate() - birthDate.getDate();
+										<h2 class="elementor-heading-title elementor-size-default">Kick Ass <span id="herAgeInKickAss"></span> th Birthday</h2>
 
-											// Adjust age if birthday hasn't occurred yet this year
-											if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
-													age--;
-											}
-											document.write(age);
-										</script>th Birthday</h2>
+										<script type="text/javascript">
+												var today = new Date();
+												var birthDate = new Date(1998, 9, 7); // October 7, 1998
+												var age = today.getFullYear() - birthDate.getFullYear();
+												var monthDifference = today.getMonth() - birthDate.getMonth();
+												var dayDifference = today.getDate() - birthDate.getDate();  
+
+
+												// Adjust age if birthday hasn't occurred yet this year
+												if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
+														age--;
+												}
+
+												// Update the HTML elements with the ID 'herAge'
+												document.getElementById('herAgeInLandingPage').textContent = age;
+												document.getElementById('herAgeInKickAss').textContent = age;
+										</script>
+
 									</div>
 								</div>
 								<div class="elementor-element elementor-element-bd20336 elementor-widget__width-initial elementor-absolute elementor-widget elementor-widget-image" data-id="bd20336" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="image.default">
